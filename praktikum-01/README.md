@@ -1,38 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pertanyaan Refleksi
 
-## Getting Started
+1. **Mengapa Pages Router disebut sebagai routing berbasis file?**
+Pages Router dinamakan sebagai sistem routing berbasis file karena pembuatan URL pada aplikasi ditentukan langsung oleh susunan file dan folder yang terdapat di dalam direktori pages.
+Setiap file dengan ekstensi .js, .jsx, .ts, atau .tsx yang berada di dalam folder tersebut dan mengekspor komponen React akan otomatis dikenali sebagai sebuah halaman dengan rute tertentu.
+Sebagai contoh, apabila terdapat file pages/about.tsx, maka halaman tersebut dapat diakses melalui URL /about tanpa perlu konfigurasi tambahan.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2. **Apa perbedaan Next.js dengan React standar (CRA)?**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Metode Rendering:
+Next.js menyediakan dukungan bawaan untuk Server-Side Rendering (SSR) dan Static Site Generation (SSG), sehingga performa dan optimasi SEO menjadi lebih baik. Sementara itu, React standar umumnya hanya menggunakan Client-Side Rendering (CSR).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Sistem Routing:
+Pada Next.js, routing sudah terintegrasi secara otomatis melalui struktur folder. Sedangkan pada React standar, pengembang perlu menambahkan pustaka eksternal seperti react-router-dom untuk mengatur navigasi antar halaman.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Fitur Tambahan:
+Next.js memiliki berbagai fitur siap pakai seperti API Routes, optimasi gambar, dan middleware. React standar cenderung lebih sederhana dan memerlukan konfigurasi tambahan untuk mendapatkan fitur serupa.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Apa fungsi perintah npm run dev?**
+menjalankan aplikasi dalam mode pengembangan (development mode).
+Saat perintah ini dijalankan, sistem akan mengaktifkan server lokal (biasanya di localhost:3000) yang memungkinkan pengembang menguji aplikasi secara langsung.
+Mode ini juga mendukung fitur seperti Fast Refresh atau Hot Module Replacement, sehingga setiap perubahan kode dapat langsung terlihat di browser tanpa perlu memulai ulang server.
 
-## Learn More
+4. **Apa perbedaan npm run dev dan run build?**
+npm run dev:
+Digunakan selama tahap pengembangan aplikasi.
+npm run build:
+Digunakan untuk menyiapkan aplikasi ke tahap produksi.
 
-To learn more about Next.js, take a look at the following resources:
+## Dokumentasi
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Langkah 3](public/docs/langkah-3.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Langkah 5](public/docs/langkah-5.png)
 
-## Deploy on Vercel
+![Langkah 5](public/docs/langkah-6.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Langkah 5](public/docs/langkah-7.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Langkah 5](public/docs/tugas-1.png)
+
+![Langkah 5](public/docs/tugas-2.png)
