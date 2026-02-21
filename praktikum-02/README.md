@@ -31,3 +31,7 @@
 ![Komponen Navbar](public/docs/NextJS.png)
 ![Komponen Navbar](public/docs/global.png)
 ![Komponen Navbar](public/docs/index.png)
+
+6. layout Global
+![layout Global](public/docs/appshellkode.png)
+![layout Global](public/docs/hasilappshell.png)
