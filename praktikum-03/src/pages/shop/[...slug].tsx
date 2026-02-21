@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 
 const HalamanToko = () => {
   const { query } = useRouter();
-
   const slug = query.slug as string[] | undefined;
 
   return (
