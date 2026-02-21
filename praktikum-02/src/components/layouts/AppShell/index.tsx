@@ -13,8 +13,15 @@ const AppShell = ({ children }: AppShellProps) => {
         {children}
       </div>
 
-      <footer style={{ background: "#eee", padding: "10px", textAlign: "center" }}>
-        footer
+      <footer
+        style={{
+          background: "#eee",
+          padding: "15px",
+          textAlign: "center",
+          marginTop: "20px",
+        }}
+      >
+        © 2026 Aryan Saputra
       </footer>
     </main>
   );

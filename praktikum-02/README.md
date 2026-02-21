@@ -43,3 +43,6 @@
 8. Tugas 2
 ![layout Global](public/docs/slug.png)
 ![layout Global](public/docs/react.png)
+
+9. Tugas 3
+![layout Global](public/docs/footer.png)
