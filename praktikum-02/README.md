@@ -46,3 +46,32 @@
 
 9. Tugas 3
 ![layout Global](public/docs/footer.png)
+
+10. . Pertanyaan Refleksi 
+1. Apa perbedaan routing berbasis file dan routing manual? 
+Routing berbasis file:
+- URL otomatis dibuat dari struktur folder
+- Tidak perlu konfigurasi manual
+- Lebih cepat dan simpel
+
+Routing manual:
+- Harus mendefinisikan route satu per satu (seperti di Express/React Router)
+- Lebih fleksibel tapi lebih ribet
+
+2. Mengapa dynamic routing penting dalam aplikasi web? 
+- Bisa menangani banyak halaman dengan 1 file
+- Cocok untuk blog, produk, detail user
+- URL bisa dinamis (contoh: /blog/react-hooks)
+
+3. Apa keuntungan menggunakan layout global dibanding memanggil komponen satu per satu? 
+- Tidak perlu import Navbar/Footer di setiap halaman
+- Kode lebih rapi
+- Konsisten di semua halaman
+- Mudah maintenance
+
+
+11. Kesimpulan
+- Menghemat konfigurasi routing
+- Mendukung nested & dynamic routing
+- Mempermudah layout global lewat _app.tsx
+- Struktur project jadi lebih clean
