@@ -39,3 +39,7 @@
 7. Tugas 1
 ![layout Global](public/docs/profile.png)
 ![layout Global](public/docs/profileedit.png)
+
+8. Tugas 2
+![layout Global](public/docs/slug.png)
+![layout Global](public/docs/react.png)
