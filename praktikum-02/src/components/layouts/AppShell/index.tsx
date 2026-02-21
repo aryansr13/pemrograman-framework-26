@@ -8,7 +8,14 @@ const AppShell = ({ children }: AppShellProps) => {
   return (
     <main>
       <Navbar />
-      {children}
+
+      <div style={{ padding: "20px" }}>
+        {children}
+      </div>
+
+      <footer style={{ background: "#eee", padding: "10px", textAlign: "center" }}>
+        footer
+      </footer>
     </main>
   );
 };
