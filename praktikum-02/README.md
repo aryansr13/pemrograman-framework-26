@@ -35,3 +35,7 @@
 6. layout Global
 ![layout Global](public/docs/appshellkode.png)
 ![layout Global](public/docs/hasilappshell.png)
+
+7. Tugas 1
+![layout Global](public/docs/profile.png)
+![layout Global](public/docs/profileedit.png)
