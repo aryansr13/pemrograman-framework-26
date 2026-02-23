@@ -32,3 +32,7 @@
 ![Tugas 2](public/docs/tugas2.1.png)
 ![Tugas 2](public/docs/tugas2.2.png)
 ![Tugas 2](public/docs/tugas2.3.png)
+
+11. Tugas 3
+![Tugas 3](public/docs/tugas3.png)
+![Tugas 3](public/docs/tugas3.1.png)
