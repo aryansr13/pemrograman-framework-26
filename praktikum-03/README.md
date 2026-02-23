@@ -14,3 +14,6 @@
 4. Optional Catch-All Route
 ![lLangkah 4](public/docs/erorr.png)
 ![Langkah 4](public/docs/renameslug.png)
+
+5. Validasi Parameter
+![lLangkah 5](public/docs/semuakategori.png)

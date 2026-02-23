@@ -7,8 +7,15 @@ const HalamanToko = () => {
   return (
     <div>
       <h1>Halaman Toko</h1>
+
+      {/* tampil kategori */}
       <p>
-        Toko: {slug ? `${slug[0]}-${slug[1]}` : "Tidak ada slug"}
+        Kategori: {slug && slug.length > 0 ? slug[0] : "Semua Kategori"}
+      </p>
+
+      {/* tampil sub kategori */}
+      <p>
+        Sub Kategori: {slug && slug.length > 1 ? slug[1] : "-"}
       </p>
     </div>
   );
