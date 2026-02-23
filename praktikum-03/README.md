@@ -9,3 +9,8 @@
 ![lLangkah 3](public/docs/3.png)
 ![Langkah 3](public/docs/4.png)
 ![lLangkah 3](public/docs/5.png)
+
+
+4. Optional Catch-All Route
+![lLangkah 4](public/docs/erorr.png)
+![Langkah 4](public/docs/renameslug.png)
