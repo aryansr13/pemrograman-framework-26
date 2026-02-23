@@ -17,3 +17,7 @@
 
 5. Validasi Parameter
 ![lLangkah 5](public/docs/semuakategori.png)
+
+7. Navigasi Imperatif (router.push) 
+![lLangkah 7](public/docs/authlogin.png)
+![lLangkah 7](public/docs/keproduk.png)
