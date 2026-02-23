@@ -21,3 +21,6 @@
 7. Navigasi Imperatif (router.push) 
 ![lLangkah 7](public/docs/authlogin.png)
 ![lLangkah 7](public/docs/keproduk.png)
+
+8. NavigasiSimulasi Redirect (Belum Login) 
+![lLangkah 8](public/docs/produkmasuklogindulu.png)
