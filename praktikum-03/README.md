@@ -24,3 +24,6 @@
 
 8. NavigasiSimulasi Redirect (Belum Login) 
 ![lLangkah 8](public/docs/produkmasuklogindulu.png)
+
+9. Tugas 1
+![lLangkah 8](public/docs/tugas1.png)
