@@ -27,3 +27,8 @@
 
 9. Tugas 1
 ![lLangkah 8](public/docs/tugas1.png)
+
+10. Tugas 2
+![Tugas 2](public/docs/tugas2.1.png)
+![Tugas 2](public/docs/tugas2.2.png)
+![Tugas 2](public/docs/tugas2.3.png)

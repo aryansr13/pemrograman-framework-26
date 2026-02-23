@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const ProdukPage = () => {
-  const [isLogin] = useState(false); // simulasi belum login
+export default function ProductPage() {
   const router = useRouter();
+  const [isLogin] = useState(true); // ganti false kalau mau redirect
 
   useEffect(() => {
     if (!isLogin) {
@@ -11,7 +11,9 @@ const ProdukPage = () => {
     }
   }, [isLogin, router]);
 
-  return <div>Produk User Page</div>;
-};
-
-export default ProdukPage;
+  return (
+    <div>
+      <h1>Produk User Page</h1>
+    </div>
+  );
+}
