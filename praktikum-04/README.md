@@ -33,3 +33,9 @@
 7.  Kombinasi Global CSS + CSS Module
 ![  Kombinasi](public/docs/17.png)
 ![  Kombinasi ](public/docs/18.png)
+
+8.  SCSS (SASS)
+![SCSS](public/docs/19.png)
+![SCSS](public/docs/20.png)
+![SCSS](public/docs/21.png)
+![SCSS](public/docs/22.png)
