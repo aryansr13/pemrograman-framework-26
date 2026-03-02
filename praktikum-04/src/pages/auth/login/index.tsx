@@ -14,6 +14,7 @@ const HalamanLogin = () => {
     <div className={styles.login}>
         <h1>Halaman Login</h1>
         <button onClick={() => handlerLogin()}>Login</button> <br/>
+        <h1 style={{ color: "red",border: "1px solid red" ,borderRadius: "10px",padding: "10px",}}>Belum punya akun?</h1>
         <Link href={"/auth/register"} className="link">ke Halaman Register</Link>
     </div>
   );

@@ -24,3 +24,7 @@
 5. Refactoring Struktur
 ![ Refactoring](public/docs/13.png)
 ![ Refactoring ](public/docs/14.png)
+
+6.  Inline Styling
+![  Inline](public/docs/15.png)
+![  Inline ](public/docs/16.png)
