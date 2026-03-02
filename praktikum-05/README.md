@@ -33,3 +33,17 @@
 9. Tugas 3
 ![gambar](public/docs/17.png)
 ![gambar](public/docs/18.png)
+
+10. Pertanyaan Evaluasi 
+1. Apa fungsi utama _document.js? 
+:
+Mengatur struktur HTML global ( <html>, <body>, meta dasar ) yang dipakai semua halaman.
+2. Mengapa <title> tidak disarankan di _document.js? 
+:
+Karena <title> harus beda tiap halaman, jadi sebaiknya pakai next/head di halaman masing-masing.
+3. Apa perbedaan halaman biasa dan halaman 404.js? 
+:
+Halaman biasa tampil sesuai route, sedangkan 404.js otomatis muncul saat halaman tidak ditemukan.
+4. Mengapa folder public tidak perlu di-import? 
+:
+Karena file di public bisa langsung diakses lewat path URL (/gambar.png) tanpa import.
