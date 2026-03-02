@@ -19,3 +19,17 @@
 6. Menampilkan Gambar dari Folder Public
 ![gambar](public/docs/9.png)
 ![gambar](public/docs/10.png)
+
+7. Tugas 1
+![gambar](public/docs/11.png)
+![gambar](public/docs/12.png)
+![gambar](public/docs/13.png)
+
+8. Tugas 2
+![gambar](public/docs/14.png)
+![gambar](public/docs/15.png)
+![gambar](public/docs/16.png)
+
+9. Tugas 3
+![gambar](public/docs/17.png)
+![gambar](public/docs/18.png)
