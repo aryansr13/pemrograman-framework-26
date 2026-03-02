@@ -1,2 +1,2 @@
-1. Menjalankan Project 
+1. Menjalankan project
 ![awal](public/docs/1.png)
