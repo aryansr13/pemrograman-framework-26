@@ -6,3 +6,6 @@
 
 3.  Pengaturan Title per Halaman 
 ![title](public/docs/3.png)
+
+4.  Membuat Custom Error Page (404)
+![404](public/docs/4.png)
