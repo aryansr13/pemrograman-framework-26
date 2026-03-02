@@ -1,2 +1,5 @@
 1. Menjalankan project
 ![awal](public/docs/1.png)
+
+2.  Membuat Custom Document 
+![dokumen](public/docs/2.png)
