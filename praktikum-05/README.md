@@ -15,3 +15,7 @@
 ![style](public/docs/6.png)
 ![style](public/docs/7.png)
 ![style](public/docs/8.png)
+
+6. Menampilkan Gambar dari Folder Public
+![gambar](public/docs/9.png)
+![gambar](public/docs/10.png)
