@@ -39,3 +39,9 @@
 ![SCSS](public/docs/20.png)
 ![SCSS](public/docs/21.png)
 ![SCSS](public/docs/22.png)
+
+9. Tailwind CSS
+![Tailwind](public/docs/23.png)
+![Tailwind](public/docs/24.png)
+![Tailwind](public/docs/25.png)
+![Tailwind](public/docs/26.png)
