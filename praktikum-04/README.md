@@ -48,3 +48,6 @@
 
 10. Tugas 1
 ![Tugas](public/docs/HasilTugas1.png)
+
+11. Tugas 2
+![Tugas](public/docs/HasilTugas2.png)
