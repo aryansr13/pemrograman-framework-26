@@ -9,3 +9,9 @@
 
 4.  Membuat Custom Error Page (404)
 ![404](public/docs/4.png)
+
+5.  Styling Halaman 404 
+![style](public/docs/5.png)
+![style](public/docs/6.png)
+![style](public/docs/7.png)
+![style](public/docs/8.png)
