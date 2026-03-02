@@ -51,3 +51,6 @@
 
 11. Tugas 2
 ![Tugas](public/docs/HasilTugas2.png)
+
+12. Tugas 3
+![Tugas](public/docs/HasilTugas3.png)
