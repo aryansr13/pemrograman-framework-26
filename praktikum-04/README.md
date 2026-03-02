@@ -28,3 +28,8 @@
 6.  Inline Styling
 ![  Inline](public/docs/15.png)
 ![  Inline ](public/docs/16.png)
+
+
+7.  Kombinasi Global CSS + CSS Module
+![  Kombinasi](public/docs/17.png)
+![  Kombinasi ](public/docs/18.png)
