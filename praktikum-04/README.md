@@ -20,3 +20,7 @@
 4.  Conditional Rendering Navbar (Tanpa Navbar di Login)
 ![ Rendering Navbar ](public/docs/11.png)
 ![ Rendering Navbar ](public/docs/12.png)
+
+5. Refactoring Struktur
+![ Refactoring](public/docs/13.png)
+![ Refactoring ](public/docs/14.png)
