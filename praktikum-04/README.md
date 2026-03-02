@@ -54,3 +54,42 @@
 
 12. Tugas 3
 ![Tugas](public/docs/HasilTugas3.png)
+
+13. Pertanyaan Refleksi
+1. Kapan sebaiknya menggunakan CSS Module dibanding Global CSS?
+:
+CSS Module digunakan saat styling hanya ingin berlaku untuk satu komponen saja, agar tidak bentrok dengan style lain.
+Cocok untuk project berbasis komponen seperti React / Next.js.
+2. Apa kelemahan inline styling?
+:
+Tidak bisa pakai pseudo-class (:hover, :focus)
+
+Tidak bisa pakai media query
+
+Sulit dipakai ulang
+
+Kode jadi tidak rapi jika terlalu banyak style
+3. Mengapa SCSS cocok untuk project skala besar?
+:
+Karena SCSS punya:
+
+Variable
+
+Nesting
+
+Mixins
+
+Reusable style
+
+Sehingga kode lebih terstruktur dan mudah dikelola saat project besar.
+4. Apa keunggulan Tailwind dibanding CSS tradisional
+:
+Styling lebih cepat (langsung di class)
+
+Tidak perlu bikin file CSS baru
+
+Konsisten
+
+Lebih sedikit konflik style
+
+Cocok untuk development cepat
