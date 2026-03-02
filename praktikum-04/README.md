@@ -45,3 +45,6 @@
 ![Tailwind](public/docs/24.png)
 ![Tailwind](public/docs/25.png)
 ![Tailwind](public/docs/26.png)
+
+10. Tugas 1
+![Tugas](public/docs/HasilTugas1.png)
