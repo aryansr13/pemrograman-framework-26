@@ -38,3 +38,7 @@
 ![memanggil data](public/docs/22.png)
 ![memanggil data](public/docs/23.png)
 ![memanggil data](public/docs/24.png)
+
+11.  Tugas 2
+![memanggil data](public/docs/25.png)
+![memanggil data](public/docs/26.png)

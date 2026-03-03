@@ -1,48 +1,61 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 type ProductType = {
-    id: string;
-    name: string;
-    price: number;
-    size: string;
+  id: string;
+  name: string;
+  price: number;
+  size: string;
+  category: string; // Tambah field category
+  color?: string;
 };
 
-const Kategori = () => {
-    // const [isLogin, setIsLogin] = useState(false);
-    // const { push } = useRouter();
-    const [products, setProducts] = useState([]);
+const Produk = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //   if (!isLogin) {
-    //     push("/auth/login");
-    //   }
-    // }, []);
+  useEffect(() => {
+    fetch("/api/produk")
+      .then((res) => res.json())
+      .then((data) => {
+        // Konversi ke array
+        const dataArray = Array.isArray(data.data) 
+          ? data.data 
+          : Object.values(data.data);
+        setProducts(dataArray);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
 
-    useEffect(() => {
-        fetch("/api/produk")
-        .then((response) => response.json())
-        .then((responsedata) => {
-            // console.log("Data produk:", responsedata.data);
-            setProducts(responsedata.data);
-        })
-        .catch((error) => {
-            console.error("Error fetching produk:", error);
-        });
-    }, []);
+  if (loading) return <div style={{ padding: "20px" }}>Loading...</div>;
 
-    return (
-        <div>
-        <h1>Daftar Produk</h1>
-        {products.map((products: ProductType) => (
-            <div key={products.id}>
-                <h2>{products.name}</h2>
-                <p>Harga: {products.price}</p>
-                <p>Ukuran: {products.size}</p>
-            </div>
-        ))}
-        </div>
-    );
+  return (
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <h1>Daftar Produk</h1>
+      
+      {products.length === 0 ? (
+        <p>Tidak ada produk</p>
+      ) : (
+        products.map((product) => (
+          <div key={product.id} style={{ 
+            border: "1px solid #ccc", 
+            padding: "15px", 
+            margin: "10px 0",
+            borderRadius: "5px"
+          }}>
+            <h3>{product.name}</h3>
+            <p><strong>Harga:</strong> Rp {product.price.toLocaleString()}</p>
+            <p><strong>Ukuran:</strong> {product.size}</p>
+            <p><strong>Kategori:</strong> {product.category}</p> {/* Tampilkan category */}
+            {product.color && <p><strong>Warna:</strong> {product.color}</p>}
+          </div>
+        ))
+      )}
+    </div>
+  );
 };
 
-export default Kategori;
+export default Produk;
