@@ -20,3 +20,6 @@
 ![setup](public/docs/13.png)
 ![setup](public/docs/14.png)
 ![setup](public/docs/15.png)
+
+5.  install firebase
+![intsall](public/docs/16.png)
