@@ -23,3 +23,6 @@
 
 5.  install firebase
 ![intsall](public/docs/16.png)
+
+7. 5.  firebase
+![intsall](public/docs/18.png)
