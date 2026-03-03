@@ -11,11 +11,10 @@ const Kategori = () => {
   if (error) return <div>Gagal memuat data...</div>;
 
   return (
-    <div>
-      <TampilanProduk
-        products={isLoading ? [] : data?.data || []}
-      />
-    </div>
+    <TampilanProduk
+      products={data?.data || []}
+      isLoading={isLoading}
+    />
   );
 };
 

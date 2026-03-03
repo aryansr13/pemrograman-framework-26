@@ -8,21 +8,38 @@ type ProductType = {
   category: string;
 };
 
-const TampilanProduk = ({ products }: { products: ProductType[] }) => {
+const TampilanProduk = ({
+  products,
+  isLoading,
+}: {
+  products: ProductType[];
+  isLoading: boolean;
+}) => {
   return (
     <div className={styles.produk}>
       <h1 className={styles.produk__title}>Daftar Produk</h1>
 
       <div className={styles.produk__content}>
-        {products.length > 0 ? (
-          products.map((product: ProductType) => (
+        {isLoading ? (
+          // 🔥 Tampilkan 4 skeleton saat loading
+          Array.from({ length: 2 }).map((_, index) => (
+            <div
+              key={index}
+              className={styles.produk__content__skeleton}
+            >
+              <div className={styles.produk__content__skeleton__image}></div>
+              <div className={styles.produk__content__skeleton__name}></div>
+              <div className={styles.produk__content__skeleton__category}></div>
+              <div className={styles.produk__content__skeleton__price}></div>
+            </div>
+          ))
+        ) : products.length > 0 ? (
+          products.map((product) => (
             <div
               key={product.id}
               className={styles.produk__content__item}
             >
-              <div
-                className={styles.produk__content__item__image}
-              >
+              <div className={styles.produk__content__item__image}>
                 <img
                   src={product.image}
                   alt={product.name}
@@ -44,13 +61,7 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
             </div>
           ))
         ) : (
-          // 🔥 Skeleton muncul jika data kosong
-          <div className={styles.produk__content__skeleton}>
-            <div className={styles.produk__content__skeleton__image}></div>
-            <div className={styles.produk__content__skeleton__name}></div>
-            <div className={styles.produk__content__skeleton__category}></div>
-            <div className={styles.produk__content__skeleton__price}></div>
-          </div>
+          <p>Tidak ada produk.</p>
         )}
       </div>
     </div>

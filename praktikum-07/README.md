@@ -24,3 +24,9 @@ o Static Site Generation
 :
 Static Site Generation (SSG) adalah metode di mana halaman dibuat saat proses build sebelum diakses pengguna. Halaman yang dihasilkan bersifat statis, sangat cepat diakses, dan baik untuk SEO, tetapi tidak cocok untuk data yang sering berubah secara real-time.
 
+
+2. Tugas 2
+![awal](public/docs/8.png)
+![awal](public/docs/9.png)
+![awal](public/docs/10.png)
+![awal](public/docs/11.png)
