@@ -12,25 +12,25 @@ const Category = () => {
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch("/api/category");
-        const result = await response.json();
-        
-        // Konversi ke array
-        const dataArray = Array.isArray(result.data) 
-          ? result.data 
-          : Object.values(result.data);
-        
-        setCategories(dataArray);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error:", error);
-        setLoading(false);
-      }
-    };
+  const fetchCategories = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/category");
+      const result = await response.json();
+      
+      const dataArray = Array.isArray(result.data) 
+        ? result.data 
+        : Object.values(result.data);
+      
+      setCategories(dataArray);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchCategories();
   }, []);
 
@@ -38,7 +38,28 @@ const Category = () => {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Category Page</h1>
+      <div style={{ 
+        display: "flex", 
+        justifyContent: "space-between", 
+        alignItems: "center",
+        marginBottom: "20px" 
+      }}>
+        <h1>Category Page</h1>
+        <button 
+          onClick={fetchCategories}
+          style={{
+            padding: "8px 16px",
+            backgroundColor: "#28a745",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "14px"
+          }}
+        >
+          🔄 Refresh
+        </button>
+      </div>
 
       {slug ? (
         <div>

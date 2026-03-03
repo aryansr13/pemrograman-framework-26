@@ -42,3 +42,6 @@
 11.  Tugas 2
 ![memanggil data](public/docs/25.png)
 ![memanggil data](public/docs/26.png)
+
+12.  Tugas 3
+![memanggil data](public/docs/27.png)
