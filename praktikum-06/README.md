@@ -33,3 +33,8 @@
 9.   API Mengambil Data Firebase 
 ![memanggil data](public/docs/20.png)
 ![memanggil data](public/docs/21.png)
+
+10. Tugas 1 
+![memanggil data](public/docs/22.png)
+![memanggil data](public/docs/23.png)
+![memanggil data](public/docs/24.png)
