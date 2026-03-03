@@ -1,32 +1,22 @@
-import { useEffect, useState } from "react";
-import TampilProduk from "@/views/products";
+import useSWR from "swr";
+import TampilanProduk from "../../views/products";
+import fetcher from "../utils/swr/fetcher";
 
-type ProductType = {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-};
+const Kategori = () => {
+  const { data, error, isLoading } = useSWR(
+    "/api/products",
+    fetcher
+  );
 
-const ProdukPage = () => {
-  const [products, setProducts] = useState([]);
+  if (error) return <div>Gagal memuat data...</div>;
 
-useEffect(() => {
-  setTimeout(() => {
-    fetch("/api/products")
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setProducts(result.data); 
-      });
-  }, 2000);
-}, []);
   return (
     <div>
-      <TampilProduk products={products} />
+      <TampilanProduk
+        products={isLoading ? [] : data?.data || []}
+      />
     </div>
   );
 };
 
-export default ProdukPage;
+export default Kategori;

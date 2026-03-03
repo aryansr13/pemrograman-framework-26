@@ -8,3 +8,7 @@
 3. Implementasi Skeleton Loading 
 ![awal](public/docs/4.png)
 ![awal](public/docs/5.png)
+
+5.  Implementasi SWR  
+![awal](public/docs/6.png)
+![awal](public/docs/7.png)
