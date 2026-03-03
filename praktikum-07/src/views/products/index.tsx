@@ -8,39 +8,53 @@ type ProductType = {
   category: string;
 };
 
-type Props = {
-  products: ProductType[];
-};
-
-const TampilProduk = ({ products }: Props) => {
+const TampilanProduk = ({ products }: { products: ProductType[] }) => {
   return (
     <div className={styles.produk}>
-      <h1 className={styles.produk_title}>Daftar Produk</h1>
+      <h1 className={styles.produk__title}>Daftar Produk</h1>
 
-      <div className={styles.produk_content}>
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className={styles.produk_content_item}
-          >
-            <img src={product.image} />
+      <div className={styles.produk__content}>
+        {products.length > 0 ? (
+          products.map((product: ProductType) => (
+            <div
+              key={product.id}
+              className={styles.produk__content__item}
+            >
+              <div
+                className={styles.produk__content__item__image}
+              >
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  width={200}
+                />
+              </div>
 
-            <div className={styles.produk_content_item_name}>
-              {product.name}
+              <h4 className={styles.produk__content__item__name}>
+                {product.name}
+              </h4>
+
+              <p className={styles.produk__content__item__category}>
+                {product.category}
+              </p>
+
+              <p className={styles.produk__content__item__price}>
+                Rp {product.price.toLocaleString()}
+              </p>
             </div>
-
-            <div className={styles.produk_content_item_category}>
-              {product.category}
-            </div>
-
-            <div className={styles.produk_content_item_price}>
-              Rp {product.price.toLocaleString()}
-            </div>
+          ))
+        ) : (
+          // 🔥 Skeleton muncul jika data kosong
+          <div className={styles.produk__content__skeleton}>
+            <div className={styles.produk__content__skeleton__image}></div>
+            <div className={styles.produk__content__skeleton__name}></div>
+            <div className={styles.produk__content__skeleton__category}></div>
+            <div className={styles.produk__content__skeleton__price}></div>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
 };
 
-export default TampilProduk;
+export default TampilanProduk;

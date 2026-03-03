@@ -10,19 +10,18 @@ type ProductType = {
 };
 
 const ProdukPage = () => {
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
+useEffect(() => {
+  setTimeout(() => {
     fetch("/api/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching produk:", error);
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setProducts(result.data); 
       });
-  }, []);
-
+  }, 2000);
+}, []);
   return (
     <div>
       <TampilProduk products={products} />
