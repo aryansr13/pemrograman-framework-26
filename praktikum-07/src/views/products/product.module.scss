@@ -1,0 +1,44 @@
+.produk {
+  padding: 40px;
+
+  &_title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  &_content {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    &_item {
+      width: 200px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      &_name {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      &_price {
+        color: #ff5722;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      &_category {
+        color: gray;
+        font-size: 14px;
+      }
+    }
+  }
+}
