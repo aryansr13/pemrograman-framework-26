@@ -21,8 +21,8 @@ const TampilanProduk = ({
 
       <div className={styles.produk__content}>
         {isLoading ? (
-          // 🔥 Tampilkan 4 skeleton saat loading
-          Array.from({ length: 2 }).map((_, index) => (
+          // 🔥 Tampilkan skeleton saat loading
+          Array.from({ length: 4 }).map((_, index) => (
             <div
               key={index}
               className={styles.produk__content__skeleton}
@@ -55,8 +55,8 @@ const TampilanProduk = ({
                 {product.category}
               </p>
 
-              <p className={styles.produk__content__item__price}>
-                Rp {product.price.toLocaleString()}
+              <p className={styles.produk_content_item_price}>
+                Rp {product.price.toLocaleString("id-ID")}
               </p>
             </div>
           ))

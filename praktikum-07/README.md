@@ -30,3 +30,8 @@ Static Site Generation (SSG) adalah metode di mana halaman dibuat saat proses bu
 ![awal](public/docs/9.png)
 ![awal](public/docs/10.png)
 ![awal](public/docs/11.png)
+
+
+3. Tugas 3
+![awal](public/docs/12.png)
+![awal](public/docs/13.png)
