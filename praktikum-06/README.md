@@ -29,3 +29,7 @@
 
 8.   firebase service
 ![intsall](public/docs/19.png)
+
+9.   API Mengambil Data Firebase 
+![memanggil data](public/docs/20.png)
+![memanggil data](public/docs/21.png)
