@@ -13,3 +13,6 @@
 4.   Uji Perbedaan SSR vs CSR 
 ![awal](public/docs/7.png)
 ![awal](public/docs/8.png)
+
+5.  Tugas Individu 
+![awal](public/docs/8.png)
