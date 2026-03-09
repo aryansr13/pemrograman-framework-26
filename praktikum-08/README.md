@@ -16,3 +16,30 @@
 
 5.  Tugas Individu 
 ![awal](public/docs/8.png)
+
+E. Studi Analisis 
+Jawab pertanyaan berikut: 
+1. Mengapa SSR lebih baik untuk SEO? 
+:
+Server-Side Rendering (SSR) lebih baik untuk SEO karena HTML sudah berisi konten saat dikirim dari server. Mesin pencari seperti Google dapat langsung membaca dan mengindeks halaman tanpa menunggu JavaScript dijalankan.
+2. Kapan sebaiknya menggunakan SSR? 
+:
+SSR digunakan ketika:
+
+Website membutuhkan SEO
+
+Konten harus langsung terlihat saat halaman dibuka
+
+Data sering berubah seperti berita atau produk
+3. Apa kekurangan SSR dibanding CSR? 
+:
+Kekurangan SSR:
+
+Beban server lebih besar
+
+Waktu respon server bisa lebih lama
+
+Infrastruktur lebih kompleks
+4. Mengapa skeleton tidak muncul pada SSR? 
+:
+Skeleton tidak muncul pada SSR karena data sudah dirender di server sebelum halaman dikirim ke browser, sehingga halaman langsung menampilkan konten tanpa proses loading di client.
