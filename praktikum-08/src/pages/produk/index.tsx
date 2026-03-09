@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import TampilanProduk from "../../views/products";
-import fetcher from "../utils/swr/fetcher";
+import fetcher from "../../utils/swr/fetcher";
 
 const Kategori = () => {
   const { data, error, isLoading } = useSWR(

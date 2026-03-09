@@ -9,3 +9,7 @@
 3.  Refactor Type
 ![awal](public/docs/5.png)
 ![awal](public/docs/6.png)
+
+4.   Uji Perbedaan SSR vs CSR 
+![awal](public/docs/7.png)
+![awal](public/docs/8.png)
