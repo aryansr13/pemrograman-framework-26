@@ -1,12 +1,5 @@
 import TampilanProduk from "../../views/products";
-
-type ProductType = {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-};
+import { ProductType } from "../types/Product.type";
 
 const HalamanProdukServer = (props: { products: ProductType[] }) => {
   const { products } = props;
@@ -21,8 +14,6 @@ const HalamanProdukServer = (props: { products: ProductType[] }) => {
 
 export default HalamanProdukServer;
 
-// Fungsi getServerSideProps akan dipanggil setiap kali halaman diakses
-// untuk mengambil data produk dari API sebelum halaman dirender
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/api/products");
   const response = await res.json();

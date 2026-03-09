@@ -6,3 +6,6 @@
 ![awal](public/docs/3.png)
 ![awal](public/docs/4.png)
 
+3.  Refactor Type
+![awal](public/docs/5.png)
+![awal](public/docs/6.png)
