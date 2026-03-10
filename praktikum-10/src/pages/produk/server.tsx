@@ -1,7 +1,19 @@
 import TampilanProduk from "../../views/products";
+import { retrieveProducts } from "../../utils/db/servicefirebase";
 
+type ProductType = {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+};
 
-export default function HalamanProdukServer({ products }: any) {
+export default function HalamanProdukServer({
+  products,
+}: {
+  products: ProductType[];
+}) {
   return (
     <div>
       <h1>Halaman Produk Server</h1>
@@ -10,15 +22,12 @@ export default function HalamanProdukServer({ products }: any) {
   );
 }
 
-
-
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/products");
-  const response = await res.json();
+  const products = await retrieveProducts("products");
 
   return {
     props: {
-      products: response.data,
+      products,
     },
   };
 }

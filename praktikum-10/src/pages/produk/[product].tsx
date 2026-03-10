@@ -1,25 +1,32 @@
-import fetcher from "@/utils/swr/fetcher";
-import { useRouter } from "next/router";
-import useSWR from "swr";
 import DetailProduk from "../../views/DetailProduct";
+import { ProductType } from "@/types/Product.type";
 
-const HalamanProduk = () => {
-  const { query } = useRouter();
-
-  const { data, error, isLoading } = useSWR(
-    query.product ? `/api/products/${query.product}` : null,
-    fetcher
-  );
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Terjadi error saat mengambil data</div>;
-  if (!data) return <div>Data tidak ditemukan</div>;
-
+const HalamanProduk = ({ product }: { product: ProductType }) => {
   return (
     <div>
-      <DetailProduk products={data.data} />
+      <DetailProduk products={product} />
     </div>
   );
 };
 
 export default HalamanProduk;
+
+// Fungsi getServerSideProps akan dipanggil setiap kali halaman diakses
+// Digunakan untuk Server-Side Rendering (SSR)
+export async function getServerSideProps({
+  params,
+}: {
+  params: { product: string };
+}) {
+  const res = await fetch(
+    `http://localhost:3000/api/products/${params.product}`
+  );
+
+  const response = await res.json();
+
+  return {
+    props: {
+      product: response.data,
+    },
+  };
+}
