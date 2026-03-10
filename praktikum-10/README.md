@@ -13,3 +13,9 @@
 ![awal](public/docs/8.png)
 ![awal](public/docs/9.png)
 ![awal](public/docs/10.png)
+
+4. Implementasi Static Site Generation (Dynamic SSG) 
+![awal](public/docs/11.png)
+![awal](public/docs/12.png)
+![awal](public/docs/13.png)
+![awal](public/docs/14.png)
