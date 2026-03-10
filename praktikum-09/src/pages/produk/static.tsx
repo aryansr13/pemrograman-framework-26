@@ -1,26 +1,21 @@
 import TampilanProduk from "../../views/products";
-import { ProductType } from "../../types/Product.type";
+import { retrieveProducts } from "../../utils/db/servicefirebase";
 
-const HalamanProdukStatic = (props: { products: ProductType[] }) => {
-  const { products } = props;
-
+export default function HalamanProdukStatic({ products }: any) {
   return (
     <div>
       <h1>Halaman Produk Static</h1>
       <TampilanProduk products={products} isLoading={false} />
     </div>
   );
-};
-
-export default HalamanProdukStatic;
+}
 
 export async function getStaticProps() {
-  const res = await fetch("http://127.0.0.1:3000/api/products");
-  const response: { data: ProductType[] } = await res.json();
+  const products = await retrieveProducts("products");
 
   return {
     props: {
-      products: response.data,
+      products,
     },
   };
 }

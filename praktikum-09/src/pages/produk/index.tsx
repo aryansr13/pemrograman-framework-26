@@ -1,21 +1,13 @@
 import useSWR from "swr";
 import TampilanProduk from "../../views/products";
-import fetcher from "../../utils/swr/fetcher";
 
-const Kategori = () => {
-  const { data, error, isLoading } = useSWR(
-    "/api/products",
-    fetcher
-  );
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-  if (error) return <div>Gagal memuat data...</div>;
+export default function HalamanProduk() {
+  const { data } = useSWR("/api/products", fetcher);
 
-  return (
-    <TampilanProduk
-      products={data?.data || []}
-      isLoading={isLoading}
-    />
-  );
-};
+  const products = data?.data || [];
+  const isLoading = !data;
 
-export default Kategori;
+  return <TampilanProduk products={products} isLoading={isLoading} />;
+}

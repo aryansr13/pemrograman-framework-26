@@ -8,4 +8,9 @@
 ![awal](public/docs/5.png)
 ![awal](public/docs/6.png)
 
+3.Pengujian Perubahan Data 
+![awal](public/docs/7.png)
+![awal](public/docs/8.png)
+![awal](public/docs/9.png)
+![awal](public/docs/10.png)
 
