@@ -55,4 +55,4 @@ Karena halaman sudah dibuat saat proses build, sehingga data baru tidak muncul s
 SSR, karena data produk bisa selalu terbaru dan tetap SEO friendly.
 5. Apa risiko menggunakan SSG untuk produk yang sering berubah?
 :
-Data bisa menjadi tidak up-to-date sampai dilakukan build ulang.
+Data bisa menjadi tidak up-to-date sampai dilakukan build ulang ya
