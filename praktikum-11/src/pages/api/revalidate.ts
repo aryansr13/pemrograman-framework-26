@@ -1,35 +1,36 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-    revalidated: boolean;
-    message?: string;
+  revalidated: boolean;
+  message?: string;
 };
 
 export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>,
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
 ) {
-    // 1. Validasi Token Keamanan
-    if (req.query.token !== process.env.REVALIDATE_TOKEN) {
-        return res.status(401).json({
-            revalidated: false,
-            message: "Insert correct token",
-        });
-    }
+  const token = req.query.token as string;
 
-    if (req.query.data === "produk") {
-        try {
-            // Memaksa Next.js membuat ulang halaman statis /produk/static
-            await res.revalidate("/produk/static");
-            return res.status(200).json({ revalidated: true });
-        } catch (error) {
-            console.error("Error in API route:", error);
-            return res.status(500).send({ revalidated: false });
-        }
-    }
-
-    return res.json({
-        revalidated: false,
-        message: "Invalid query parameter. Expected 'data=produk'.",
+  // validasi token
+  if (token !== process.env.REVALIDATE_TOKEN) {
+    return res.status(401).json({
+      revalidated: false,
+      message: "Insert correct token",
     });
+  }
+
+  // samakan dengan URL (products)
+  if (req.query.data === "products") {
+    try {
+      await res.revalidate("/produk/static");
+      return res.status(200).json({ revalidated: true });
+    } catch (error) {
+      return res.status(500).json({ revalidated: false });
+    }
+  }
+
+  return res.status(400).json({
+    revalidated: false,
+    message: "Invalid query parameter",
+  });
 }

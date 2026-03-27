@@ -16,3 +16,8 @@
 5. Tambahkan Token Security 
 ![awal](public/docs/8.png)
 ![awal](public/docs/9.png)
+
+6. Pengujian Manual Revalidation 
+![awal](public/docs/10.png)
+![awal](public/docs/11.png)
+![awal](public/docs/12.png)
