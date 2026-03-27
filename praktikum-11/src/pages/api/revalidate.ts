@@ -9,14 +9,22 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>,
 ) {
+    // 1. Validasi Token Keamanan
+    if (req.query.token !== process.env.REVALIDATE_TOKEN) {
+        return res.status(401).json({
+            revalidated: false,
+            message: "Insert correct token",
+        });
+    }
+
     if (req.query.data === "produk") {
         try {
-            // Memaksa regenerasi halaman statis produk
+            // Memaksa Next.js membuat ulang halaman statis /produk/static
             await res.revalidate("/produk/static");
             return res.status(200).json({ revalidated: true });
         } catch (error) {
             console.error("Error in API route:", error);
-            res.status(500).send({ revalidated: false });
+            return res.status(500).send({ revalidated: false });
         }
     }
 

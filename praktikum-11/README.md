@@ -12,3 +12,7 @@
 4. Tambahkan Parameter Data 
 ![awal](public/docs/6.png)
 ![awal](public/docs/7.png)
+
+5. Tambahkan Token Security 
+![awal](public/docs/8.png)
+![awal](public/docs/9.png)
