@@ -21,3 +21,21 @@
 ![awal](public/docs/10.png)
 ![awal](public/docs/11.png)
 ![awal](public/docs/12.png)
+
+7.  Pertanyaan Analisis 
+1. Mengapa ISR lebih fleksibel dibanding SSG? 
+:
+Karena ISR bisa update data setelah build tanpa harus rebuild seluruh project, sedangkan SSG datanya tetap sampai build ulang.
+2. Apa perbedaan revalidate waktu dan on-demand? 
+:
+Revalidate waktu: update otomatis tiap interval (misal 10 detik).
+On-demand: update hanya saat dipicu manual lewat API.
+3. Mengapa endpoint revalidation harus diamankan? 
+:
+Agar tidak sembarang orang bisa memicu update data.
+4. Apa risiko jika token tidak digunakan? 
+:
+Orang lain bisa spam revalidate, bikin server berat atau data berubah tanpa kontrol.
+5. Kapan ISR lebih cocok dibanding SSR?
+:
+Saat data tidak harus real-time tapi tetap perlu update berkala (lebih cepat dari SSR).
