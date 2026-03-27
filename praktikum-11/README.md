@@ -8,3 +8,7 @@
 
 3. Buat API Revalidate 
 ![awal](public/docs/5.png)
+
+4. Tambahkan Parameter Data 
+![awal](public/docs/6.png)
+![awal](public/docs/7.png)
