@@ -16,7 +16,7 @@
 
 5. Simulasi Sistem Login 
 ![awal](public/docs/9.png)
-![awal](public/docs/10.mp4)
+![awal](public/docs/10.gif)
 
 
 
