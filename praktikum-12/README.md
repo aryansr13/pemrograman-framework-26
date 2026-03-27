@@ -6,3 +6,7 @@
 ![awal](public/docs/3.png)
 ![awal](public/docs/4.png)
 
+3. Redirect Sederhana 
+![awal](public/docs/3.png)
+![awal](public/docs/4.png)
+
