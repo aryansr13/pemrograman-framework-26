@@ -10,7 +10,13 @@
 ![awal](public/docs/5.png)
 ![awal](public/docs/6.png)
 
-4.Batasi Route Tertentu 
+4. Batasi Route Tertentu 
 ![awal](public/docs/7.png)
 ![awal](public/docs/8.png)
+
+5. Simulasi Sistem Login 
+![awal](public/docs/9.png)
+![awal](public/docs/10.mp4)
+
+
 
