@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/layouts/navbar";
 import Footer from "@/components/footer";
 import { SessionProvider } from "next-auth/react";
 
