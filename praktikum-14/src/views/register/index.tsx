@@ -5,92 +5,69 @@ import { useRouter } from "next/router";
 
 const TampilanRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-
   const { push } = useRouter();
-
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
+  const [error, setError] = useState("");
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setError("")
+    setIsLoading(true)
     event.preventDefault();
-    setIsLoading(true);
-    setError("");
-
     const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    // ✅ ambil data dengan aman
-    const email = formData.get("email")?.toString() || "";
-    const fullName = formData.get("Fullname")?.toString() || "";
-    const password = formData.get("Password")?.toString() || "";
-
-    console.log({ email, fullName, password }); // 🔍 debug
-
-    // ✅ validasi input
-    if (!email || !fullName || !password) {
-      setError("Semua field wajib diisi");
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get("email") as string;
+    const fullname = formData.get("Fullname") as string;
+    const password = formData.get("Password") as string;
+    const response = await fetch("/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, fullname, password }),
+    });
+    // const result = await response.json();
+    // console.log(result);
+    if (response.status === 200) {
+      form.reset();
+      // event.currentTarget.reset();
       setIsLoading(false);
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, fullName, password }),
-      });
-
-      const result = await response.json();
-      console.log("Response:", result);
-
-      // ✅ pakai response.ok
-      if (response.ok) {
-        form.reset();
-        setIsLoading(false);
-        push("/login"); // ✅ redirect benar
-      } else {
-        setIsLoading(false);
-        setError(result.name || "Terjadi kesalahan");
-      }
-    } catch (err) {
+      push("/auth/login");
+    } else {
       setIsLoading(false);
-      setError("Server error");
+      setError(response.status === 400 ? "Email already exists" : "An error occurred");
     }
   };
-
   return (
     <div className={styles.register}>
+      {error && <p className={styles.register__error}>{error}</p>}
       <h1 className={styles.register__title}>Halaman Register</h1>
-
       <div className={styles.register__form}>
         <form onSubmit={handleSubmit}>
           <div className={styles.register__form__item}>
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Email" />
+            <label htmlFor="email" className={styles.register__form__item__label}>
+              Email
+            </label>
+            <input type="email" id="email" name="email" placeholder="Email" className={styles.register__form__item__input} />
           </div>
 
           <div className={styles.register__form__item}>
-            <label>Fullname</label>
-            <input type="text" name="Fullname" placeholder="Fullname" />
+            <label htmlFor="Fullname" className={styles.register__form__item__label}>
+              Fullname
+            </label>
+            <input type="text" id="Fullname" name="Fullname" placeholder="Fullname" className={styles.register__form__item__input} />
           </div>
 
           <div className={styles.register__form__item}>
-            <label>Password</label>
-            <input type="password" name="Password" placeholder="Password" />
+            <label htmlFor="Password" className={styles.register__form__item__label}>
+              Password
+            </label>
+            <input type="password" id="Password" name="Password" placeholder="Password" className={styles.register__form__item__input} />
           </div>
-
-          <button type="submit" disabled={isLoading}>
+          <button type="submit" className={styles.register__form__item__button} disabled={isLoading}>
             {isLoading ? "Loading..." : "Register"}
           </button>
-
-          {error && <p>{error}</p>}
         </form>
-
-        <p>
-          Sudah punya akun?
-          <Link href="/login"> Ke Halaman Login</Link> {/* ✅ FIX */}
+        <br />
+        <p className={styles.register__form__item__text}>
+          Sudah punya akun? <Link href="/auth/login">Ke Halaman Login</Link>
         </p>
       </div>
     </div>
