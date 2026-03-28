@@ -11,3 +11,5 @@
 ![awal](public/docs/6.png)
 ![awal](public/docs/7.png)
 
+4. Uji 1
+![awal](public/docs/8.gif)

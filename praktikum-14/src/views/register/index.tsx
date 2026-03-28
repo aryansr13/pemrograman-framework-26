@@ -13,23 +13,24 @@ const TampilanRegister = () => {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(event.currentTarget);
-    const email = formData.get("email") as string;
-    const fullname = formData.get("Fullname") as string;
-    const password = formData.get("Password") as string;
-    const response = await fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, fullname, password }),
-    });
+  const email = formData.get("email") as string;
+const fullName = formData.get("Fullname") as string; // 
+const password = formData.get("Password") as string;
+
+const response = await fetch("/api/register", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ email, fullName, password }), // 
+});
     // const result = await response.json();
     // console.log(result);
     if (response.status === 200) {
       form.reset();
       // event.currentTarget.reset();
       setIsLoading(false);
-      push("/auth/login");
+      push("/login");
     } else {
       setIsLoading(false);
       setError(response.status === 400 ? "Email already exists" : "An error occurred");
@@ -67,7 +68,7 @@ const TampilanRegister = () => {
         </form>
         <br />
         <p className={styles.register__form__item__text}>
-          Sudah punya akun? <Link href="/auth/login">Ke Halaman Login</Link>
+          Sudah punya akun? <Link href="/login">Ke Halaman Login</Link>
         </p>
       </div>
     </div>
