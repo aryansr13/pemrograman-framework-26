@@ -7,4 +7,7 @@
 3. Tambahkan Secret  
 ![awal](public/docs/3.png)
 
+4. Tambahkan SessionProvider   
+![awal](public/docs/4.png)
+
 
