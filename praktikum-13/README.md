@@ -14,3 +14,7 @@
 ![awal](public/docs/5.png)
 ![awal](public/docs/6.png)
 ![awal](public/docs/7.png)
+
+6. Menambahkan Data Tambahan (Full Name) 
+![awal](public/docs/8.png)
+![awal](public/docs/9.png)
