@@ -2,28 +2,43 @@ import {
   getFirestore,
   collection,
   getDocs,
-  getDoc,
-  doc
+  query,
+  where,
+  addDoc,
 } from "firebase/firestore";
 import app from "./firebase";
 
 const db = getFirestore(app);
 
-export async function retrieveProducts(collectionName: string) {
-  const snapshot = await getDocs(collection(db, collectionName));
+export async function signUp(
+  userData: {
+    email: string;
+    fullName: string;
+    password: string;
+  },
+  callback: Function
+) {
+  // 🔍 cek apakah email sudah ada
+  const q = query(
+    collection(db, "users"),
+    where("email", "==", userData.email) // ✅ WAJIB "=="
+  );
 
-  const data = snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
+  const querySnapshot = await getDocs(q);
 
-  return data;
-}
+  if (querySnapshot.empty) {
+    // ✅ user belum ada → boleh daftar
+    await addDoc(collection(db, "users"), userData);
 
-export async function retrieveDataByID(collectionName: string, id: string) {
-  const snapshot = await getDoc(doc(db, collectionName, id));
-
-  const data = snapshot.data();
-
-  return data;
+    callback({
+      status: "success",
+      message: "User registered successfully",
+    });
+  } else {
+    // ❌ user sudah ada
+    callback({
+      status: "error",
+      message: "User already exists",
+    });
+  }
 }
