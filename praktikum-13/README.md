@@ -18,3 +18,6 @@
 6. Menambahkan Data Tambahan (Full Name) 
 ![awal](public/docs/8.png)
 ![awal](public/docs/9.png)
+
+7. Proteksi Halaman Profile 
+![awal](public/docs/10.png)

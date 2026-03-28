@@ -1,17 +1,20 @@
-import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
+import { NextMiddlewareResult } from "next/dist/server/web/types";
+import { NextFetchEvent, NextMiddleware, NextRequest, NextResponse } from "next/server";
+import { getToken } from "next-auth/jwt";
+export default function withAuth(middleware: NextMiddleware, requireAuth: string[] = []) {
+  return async (req: NextRequest, next: NextFetchEvent) => {
+    const pathname = req.nextUrl.pathname;
 
-export function middleware(request: NextRequest) {
-
-  const isLogin = true // ubah true untuk simulasi login
-
-  if (!isLogin) {
-    return NextResponse.redirect(new URL("/login", request.url))
-  }
-
-  return NextResponse.next()
-}
-
-export const config = {
-  matcher: ["/produk", "/about"]
+    if (requireAuth.includes(pathname)) {
+      const token = await getToken({
+        req,
+        secret: process.env.NEXTAUTH_SECRET,
+      });
+      if (!token) {
+        const loginUrl = new URL("/", req.url);
+        return NextResponse.redirect(loginUrl);
+      }
+    }
+    return middleware(req, next);
+  };
 }
