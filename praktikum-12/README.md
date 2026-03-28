@@ -18,5 +18,9 @@
 ![awal](public/docs/9.png)
 ![awal](public/docs/10.gif)
 
+6.  uji
+![awal](public/docs/11.gif)
+![awal](public/docs/12.png)
+
 
 

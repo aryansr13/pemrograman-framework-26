@@ -1,10 +1,17 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  return NextResponse.redirect(new URL("/auth/login", request.url));
+
+  const isLogin = true // ubah true untuk simulasi login
+
+  if (!isLogin) {
+    return NextResponse.redirect(new URL("/login", request.url))
+  }
+
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/produk"],
-};
+  matcher: ["/produk", "/about"]
+}
