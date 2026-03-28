@@ -13,3 +13,6 @@
 
 4. Uji 1
 ![awal](public/docs/8.gif)
+
+5.  Uji 2 
+![awal](public/docs/9.gif)
