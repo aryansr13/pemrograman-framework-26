@@ -21,3 +21,6 @@
 
 7. Proteksi Halaman Profile 
 ![awal](public/docs/10.png)
+
+8. Pengujian 
+![awal](public/docs/11.gif)

@@ -1,20 +1,9 @@
-import { NextMiddlewareResult } from "next/dist/server/web/types";
-import { NextFetchEvent, NextMiddleware, NextRequest, NextResponse } from "next/server";
-import { getToken } from "next-auth/jwt";
-export default function withAuth(middleware: NextMiddleware, requireAuth: string[] = []) {
-  return async (req: NextRequest, next: NextFetchEvent) => {
-    const pathname = req.nextUrl.pathname;
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import withAuth from "@/middleware/withAuth";
 
-    if (requireAuth.includes(pathname)) {
-      const token = await getToken({
-        req,
-        secret: process.env.NEXTAUTH_SECRET,
-      });
-      if (!token) {
-        const loginUrl = new URL("/", req.url);
-        return NextResponse.redirect(loginUrl);
-      }
-    }
-    return middleware(req, next);
-  };
+function middleware(req: NextRequest) {
+  return NextResponse.next();
 }
+
+export default withAuth(middleware, ["/profil"]);

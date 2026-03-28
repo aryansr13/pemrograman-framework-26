@@ -3,9 +3,9 @@ import { NextFetchEvent, NextMiddleware, NextRequest, NextResponse } from "next/
 
 export default function withAuth(
   middleware: NextMiddleware,
-  requireAuth: string[] = [],
+  requireAuth: string[] = []
 ) {
-  return async (req: NextRequest, next: NextFetchEvent) => {
+  return async (req: NextRequest, event: NextFetchEvent) => {
     const pathname = req.nextUrl.pathname;
 
     if (requireAuth.includes(pathname)) {
@@ -13,11 +13,13 @@ export default function withAuth(
         req,
         secret: process.env.NEXTAUTH_SECRET,
       });
-        if (!token) {
-            const loginUrl = new URL("/", req.url);
-            return NextResponse.redirect(loginUrl);
-        }
+
+      if (!token) {
+        return NextResponse.redirect(new URL("/", req.url));
+      }
     }
-    return middleware(req, next);
-  }
+
+    const result = await middleware(req, event);
+    return result ?? NextResponse.next();
+  };
 }
