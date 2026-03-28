@@ -24,3 +24,21 @@
 
 8. Pengujian 
 ![awal](public/docs/11.gif)
+
+9. Pertanyaan Analisis 
+1. Mengapa session menggunakan JWT? 
+:Karena stateless, tidak perlu simpan data di server dan lebih ringan.
+
+2. Apa perbedaan authorize() dan callback jwt()? 
+:authorize() → untuk validasi login (email & password)
+jwt() → untuk menyimpan data user ke token
+
+3. Mengapa middleware perlu getToken()? 
+:Untuk mengecek apakah user sudah login (punya token) atau belum.
+
+4. Apa risiko jika NEXTAUTH_SECRET tidak digunakan? 
+:Token bisa tidak aman / mudah dimanipulasi.
+
+5. Apa perbedaan autentikasi dan otorisasi dalam sistem ini? 
+:Autentikasi → proses login (verifikasi user)
+Otorisasi → hak akses ke halaman (misal /profile)
