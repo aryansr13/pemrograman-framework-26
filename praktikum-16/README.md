@@ -32,3 +32,29 @@
 9. Pengujian
 ![awal](public/docs/16.gif)
 ![awal](public/docs/17.png)
+
+10. diskusi dan analisis
+1. Apa perbedaan login credential dan login Google? 
+:Credentials: user login pakai email + password yang disimpan di database. 
+Google: user login lewat akun Google tanpa perlu membuat password baru.
+
+2. Mengapa data Google tetap perlu disimpan ke database? 
+:menyimpan role (admin/member)
+menyimpan profil user
+mengatur akses fitur
+Tanpa database, kita tidak bisa mengatur hak akses.
+
+3. Apa fungsi JWT callback? 
+:Untuk menyimpan data penting user (email, role, dll) ke token session sehingga bisa digunakan di seluruh aplikasi tanpa query database berulang.
+
+4. Mengapa perlu multi-role? 
+:admin → bisa kelola data
+member → hanya melihat data
+
+5. Apa risiko jika tidak menyimpan user ke database? 
+: 5️⃣ Risiko jika tidak menyimpan user ke database
+
+tidak bisa mengatur role
+tidak bisa menyimpan profil
+sulit melacak user
+akses fitur tidak bisa dibatasi
