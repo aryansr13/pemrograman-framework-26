@@ -7,3 +7,5 @@
 3. Authorize di NextAuth (Database Login) 
 ![awal](public/docs/3.png)
 
+4. Tambahkan Role ke Token 
+![awal](public/docs/4.gif)
