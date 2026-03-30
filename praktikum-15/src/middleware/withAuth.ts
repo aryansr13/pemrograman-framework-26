@@ -17,6 +17,9 @@ export default function withAuth(middleware: NextMiddleware, requireAuth: string
         Url.searchParams.set("callbackUrl", encodeURI(req.url));
         return NextResponse.redirect(Url);
       }
+      if (token.role !== "admin" && hanyaAdmin.some((path) => pathname.startsWith(path))) {
+        return NextResponse.redirect(new URL("/", req.url));
+      }
     }
     return middleware(req, next);
   };

@@ -12,3 +12,6 @@
 
 5. Callback URL Logic 
 ![awal](public/docs/5.png)
+
+6.  Membuat halaman Admin dan authoriz 
+![awal](public/docs/6.png)
