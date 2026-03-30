@@ -10,3 +10,7 @@
 ![awal](public/docs/5.png)
 ![awal](public/docs/6.png)
 ![awal](public/docs/7.png)
+
+4. Buat OAuth Credentials 
+![awal](public/docs/8.png)
+
