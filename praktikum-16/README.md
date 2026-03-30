@@ -14,3 +14,6 @@
 4. Buat OAuth Credentials 
 ![awal](public/docs/8.png)
 
+5. Tambahkan Environment Variables
+![awal](public/docs/9.png)
+![awal](public/docs/10.png)
