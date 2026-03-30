@@ -1,6 +1,7 @@
 import styles from './navbar.module.css';
 import { signIn, signOut, useSession } from "next-auth/react";
-import Script from "next/script"; // Gunakan import standar Next.js
+import Script from "next/script"; // Pastikan tetap menggunakan import yang benar
+import Image from "next/image"; // 1. Tambahkan import Image dari Next.js
 
 const Navbar = () => {
   const { data }: any = useSession();
@@ -8,10 +9,8 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       
-      {/* 1. Elemen div kosong dengan ID 'title' */}
       <div className={styles.navbar__brand} id="title"></div>
 
-      {/* 2. Script Next.js untuk mengisi div di atas (Gunakan backticks) */}
       <Script id="title-script" strategy="lazyOnload">
         {`document.getElementById('title').innerHTML = 'MyApp';`}
       </Script>
@@ -22,7 +21,10 @@ const Navbar = () => {
             <div className={styles.navbar__user}>
               Welcome, {data.user?.fullname}
               {data.user?.image && (
-                <img
+                // 2. Ganti tag <img> dengan komponen <Image />
+                <Image
+                  width={50}      // Wajib ada width
+                  height={50}     // Wajib ada height
                   src={data.user.image}
                   alt={data.user.fullname}
                   className={styles.navbar__user__image}

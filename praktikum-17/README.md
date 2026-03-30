@@ -7,3 +7,6 @@
 
 3. Script Optimization 
 ![awal](public/docs/4.png)
+
+4. Optimasi Avatar dengan next/image 
+![awal](public/docs/5.png)
