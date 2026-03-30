@@ -1,12 +1,11 @@
 .navbar {
   width: 100%;
   height: 60px;
-  background-color: rgb(32, 120, 207);
-  color: #fff;
   display: flex;
   align-items: center;
-  padding: 0 20px;
   justify-content: space-between;
+  padding: 0 20px;
+
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #ffffff;
 
@@ -29,11 +28,36 @@
   gap: 32px;
 }
 
-/* Welcome text */
+/* User section */
 .navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
   font-size: 16px;
   font-weight: 500;
-  opacity: 0.9;
+  opacity: 0.95;
+}
+
+/* Avatar image */
+.navbar__user__image {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #3b82f6;
+
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+/* hover efek avatar */
+.navbar__user__image:hover {
+  transform: scale(1.1);
+
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
 }
 
 /* Button */
@@ -70,6 +94,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+
   .navbar {
     padding: 0 20px;
   }
@@ -79,6 +104,13 @@
   }
 
   .navbar__user {
-    display: none;
+    gap: 8px;
+    font-size: 14px;
   }
+
+  .navbar__user__image {
+    width: 32px;
+    height: 32px;
+  }
+
 }
