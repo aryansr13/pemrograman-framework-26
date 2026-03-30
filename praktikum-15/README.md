@@ -9,3 +9,6 @@
 
 4. Tambahkan Role ke Token 
 ![awal](public/docs/4.gif)
+
+5. Callback URL Logic 
+![awal](public/docs/5.png)

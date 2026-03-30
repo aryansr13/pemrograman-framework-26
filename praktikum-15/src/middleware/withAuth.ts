@@ -1,11 +1,10 @@
 import { getToken } from "next-auth/jwt";
 import { NextFetchEvent, NextMiddleware, NextRequest, NextResponse } from "next/server";
 
-export default function withAuth(
-  middleware: NextMiddleware,
-  requireAuth: string[] = []
-) {
-  return async (req: NextRequest, event: NextFetchEvent) => {
+const hanyaAdmin = ["/admin"];
+
+export default function withAuth(middleware: NextMiddleware, requireAuth: string[] = []) {
+  return async (req: NextRequest, next: NextFetchEvent) => {
     const pathname = req.nextUrl.pathname;
 
     if (requireAuth.includes(pathname)) {
@@ -13,13 +12,12 @@ export default function withAuth(
         req,
         secret: process.env.NEXTAUTH_SECRET,
       });
-
       if (!token) {
-        return NextResponse.redirect(new URL("/", req.url));
+        const Url = new URL("/auth/login", req.url);
+        Url.searchParams.set("callbackUrl", encodeURI(req.url));
+        return NextResponse.redirect(Url);
       }
     }
-
-    const result = await middleware(req, event);
-    return result ?? NextResponse.next();
+    return middleware(req, next);
   };
 }
