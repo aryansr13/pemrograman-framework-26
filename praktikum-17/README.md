@@ -10,3 +10,9 @@
 
 4. Optimasi Avatar dengan next/image 
 ![awal](public/docs/5.png)
+
+5. Tugas Mandiri 
+![awal](public/docs/6.png)
+![awal](public/docs/7.png)
+![awal](public/docs/8.png)
+![awal](public/docs/9.png)

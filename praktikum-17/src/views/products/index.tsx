@@ -10,12 +10,19 @@ type ProductType = {
   image: string;
 };
 
-const TampilanProduct = ({ products }: { products: ProductType[] }) => {
+const TampilanProduct = ({ products, isLoading }: { products: ProductType[], isLoading?: boolean }) => {
   return (
     <div className={styles.product}>
       <h1 className={styles.product__title}>Daftar Product</h1>
 
-      {products.length > 0 ? (
+      {isLoading ? (
+        <div className={styles.product__content__skeleton}>
+          <div className={styles.product__content__skeleton__image}></div>
+          <div className={styles.product__content__skeleton__name}></div>
+          <div className={styles.product__content__skeleton__category}></div>
+          <div className={styles.product__content__skeleton__price}></div>
+        </div>
+      ) : products.length > 0 ? (
         <div className={styles.product__content}>
           {products.map((product: ProductType) => (
             <Link
