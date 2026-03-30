@@ -28,3 +28,7 @@
 
 8. Simpan Data Google ke Database 
 ![awal](public/docs/15.png)
+
+9. Pengujian
+![awal](public/docs/16.gif)
+![awal](public/docs/17.png)

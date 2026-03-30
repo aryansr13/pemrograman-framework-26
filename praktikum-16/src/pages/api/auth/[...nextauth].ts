@@ -52,17 +52,14 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-
         const isPasswordValid = await bcrypt.compare(
           credentials.password,
           user.password
         );
 
-
         if (!isPasswordValid) {
           return null;
         }
-
 
         return {
 
@@ -96,7 +93,7 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, account, profile, user }: any) {
 
 
-      // LOGIN CREDENTIALS
+      // LOGIN EMAIL PASSWORD
       if (account?.provider === "credentials" && user) {
 
         token.email = user.email;
@@ -108,7 +105,7 @@ export const authOptions: NextAuthOptions = {
 
 
 
-      // LOGIN GOOGLE + SIMPAN KE FIRESTORE
+      // LOGIN GOOGLE
       if (account?.provider === "google") {
 
         const data = {
@@ -140,6 +137,14 @@ export const authOptions: NextAuthOptions = {
           }
 
         );
+
+      }
+
+
+      // default role jika belum ada
+      if (!token.role) {
+
+        token.role = "member";
 
       }
 
@@ -179,7 +184,6 @@ export const authOptions: NextAuthOptions = {
   },
 
 };
-
 
 
 export default NextAuth(authOptions);
