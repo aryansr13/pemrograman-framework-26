@@ -5,70 +5,154 @@ import { useRouter } from "next/router";
 
 const TampilanRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { push } = useRouter();
   const [error, setError] = useState("");
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    setError("")
-    setIsLoading(true)
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(event.currentTarget);
-  const email = formData.get("email") as string;
-const fullName = formData.get("Fullname") as string; // 
-const password = formData.get("Password") as string;
+  const [success, setSuccess] = useState("");
+  const { push } = useRouter();
 
-const response = await fetch("/api/register", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ email, fullName, password }), // 
-});
-    // const result = await response.json();
-    // console.log(result);
-    if (response.status === 200) {
-      form.reset();
-      // event.currentTarget.reset();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    
+    // ✅ SIMPAN REFERENSI FORM DI AWAL (Solusi bug 2 alert)
+    const form = event.target as HTMLFormElement; 
+    
+    setError("");
+    setSuccess("");
+    setIsLoading(true);
+
+    const formData = new FormData(form);
+    const email = formData.get("email") as string;
+    const fullName = formData.get("Fullname") as string;
+    const password = formData.get("Password") as string;
+
+    // ✅ VALIDASI
+    if (!email) {
+      setError("Email wajib diisi");
       setIsLoading(false);
-      push("/login");
-    } else {
+      return;
+    }
+
+    if (!email.includes("@")) {
+      setError("Email tidak valid");
       setIsLoading(false);
-      setError(response.status === 400 ? "Email already exists" : "An error occurred");
+      return;
+    }
+
+    if (!password || password.length < 6) {
+      setError("Password minimal 6 karakter");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, fullName, password }),
+      });
+
+      const result = await response.json(); 
+
+      if (!response.ok) {
+        if (response.status === 400) {
+          setError("Email sudah terdaftar");
+        } else {
+          setError(result.message || "Server error");
+        }
+        return; 
+      }
+
+      // ✅ SUCCESS
+      setSuccess("Register berhasil! Redirect ke login...");
+      form.reset(); // ✅ SEKARANG AMAN DIGUNAKAN
+
+      setTimeout(() => {
+        push("/login");
+      }, 1500);
+
+    } catch (error) {
+      console.error(error);
+      setError("Gagal terhubung ke server");
+    } finally {
+      // ✅ MATIKAN LOADING DI FINALLY AGAR SELALU DIJALANKAN
+      setIsLoading(false);
     }
   };
+
   return (
     <div className={styles.register}>
-      {error && <p className={styles.register__error}>{error}</p>}
+      {/* 🔴 ERROR ALERT */}
+      {error && (
+        <div className={styles.register__error}>
+          <div className={styles.icon}>⚠️</div>
+          <div className={styles.message}>{error}</div>
+        </div>
+      )}
+
+      {/* 🟢 SUCCESS ALERT */}
+      {success && (
+        <div className={styles.register__success}>
+          <div className={styles.icon}>✅</div>
+          <div className={styles.message}>{success}</div>
+        </div>
+      )}
+
       <h1 className={styles.register__title}>Halaman Register</h1>
+
       <div className={styles.register__form}>
         <form onSubmit={handleSubmit}>
           <div className={styles.register__form__item}>
-            <label htmlFor="email" className={styles.register__form__item__label}>
+            <label className={styles.register__form__item__label}>
               Email
             </label>
-            <input type="email" id="email" name="email" placeholder="Email" className={styles.register__form__item__input} />
+            <input
+              type="email"
+              name="email"
+              placeholder="Masukkan email Anda"
+              required
+              className={styles.register__form__item__input}
+            />
           </div>
 
           <div className={styles.register__form__item}>
-            <label htmlFor="Fullname" className={styles.register__form__item__label}>
+            <label className={styles.register__form__item__label}>
               Fullname
             </label>
-            <input type="text" id="Fullname" name="Fullname" placeholder="Fullname" className={styles.register__form__item__input} />
+            <input
+              type="text"
+              name="Fullname"
+              placeholder="Masukkan nama lengkap"
+              required
+              className={styles.register__form__item__input}
+            />
           </div>
 
           <div className={styles.register__form__item}>
-            <label htmlFor="Password" className={styles.register__form__item__label}>
+            <label className={styles.register__form__item__label}>
               Password
             </label>
-            <input type="password" id="Password" name="Password" placeholder="Password" className={styles.register__form__item__input} />
+            <input
+              type="password"
+              name="Password"
+              placeholder="Minimal 6 karakter"
+              minLength={6}
+              required
+              className={styles.register__form__item__input}
+            />
           </div>
-          <button type="submit" className={styles.register__form__item__button} disabled={isLoading}>
-            {isLoading ? "Loading..." : "Register"}
+
+          <button
+            type="submit"
+            className={styles.register__form__item__button}
+            disabled={isLoading}
+          >
+            {isLoading ? "Memproses..." : "Register"}
           </button>
         </form>
-        <br />
+
         <p className={styles.register__form__item__text}>
-          Sudah punya akun? <Link href="/login">Ke Halaman Login</Link>
+          Sudah punya akun? <Link href="/login">Masuk di sini</Link>
         </p>
       </div>
     </div>

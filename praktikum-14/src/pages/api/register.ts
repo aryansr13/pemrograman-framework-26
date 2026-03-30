@@ -1,36 +1,27 @@
-import { signUp } from "@/utils/db/servicefirebase";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-type Data = {
-  name: string;
-  alamat: string;
-};
+import { signUp } from "@/utils/db/servicefirebase";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    return await signUp(
-      req.body,
-      (result: { status: string; message: string }) => {
-        if (result.status === "success") {
-          return res.status(200).json({
-            name: result.message,
-            alamat: "",
-          });
-        } else {
-          return res.status(400).json({
-            name: result.message,
-            alamat: "",
-          });
-        }
-      }
-    );
-  } else {
-    return res.status(405).json({
-      name: "Method not allowed",
-      alamat: "",
-    });
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method not allowed" });
   }
+
+  const { email, fullName, password } = req.body;
+
+  return new Promise<void>((resolve) => {
+    signUp({ email, fullName, password }, (result: any) => {
+      if (result.status === "success") {
+        res.status(200).json({ message: result.message });
+      } else if (result.message === "User already exists") {
+        res.status(400).json({ message: result.message });
+      } else {
+        res.status(500).json({ message: result.message });
+      }
+
+      resolve(); // ✅ SELALU resolve, JANGAN reject
+    });
+  });
 }

@@ -35,7 +35,6 @@ export async function retrieveDataByID(
   return data;
 }
 
-// 🔐 SIGN UP (SUDAH PAKAI BCRYPT)
 export async function signUp(
   userData: {
     email: string;
@@ -46,7 +45,6 @@ export async function signUp(
   callback: Function
 ) {
   try {
-    // 🔍 cek email sudah ada atau belum
     const q = query(
       collection(db, "users"),
       where("email", "==", userData.email)
@@ -55,35 +53,29 @@ export async function signUp(
     const querySnapshot = await getDocs(q);
 
     if (!querySnapshot.empty) {
-      // ❌ user sudah ada
-      callback({
+      return callback({
         status: "error",
         message: "User already exists",
-      });
-    } else {
-      // ✅ hash password
-      const hashedPassword = await bcrypt.hash(
-        userData.password,
-        10
-      );
-
-      // ✅ set data baru
-      const newUser = {
-        email: userData.email,
-        fullName: userData.fullName,
-        password: hashedPassword,
-        role: "user",
-      };
-
-      await addDoc(collection(db, "users"), newUser);
-
-      callback({
-        status: "success",
-        message: "User registered successfully",
-      });
+      }); // ⛔ STOP TOTAL
     }
+
+    const hashedPassword = await bcrypt.hash(userData.password, 10);
+
+    const newUser = {
+      email: userData.email,
+      fullName: userData.fullName,
+      password: hashedPassword,
+      role: "member",
+    };
+
+    await addDoc(collection(db, "users"), newUser);
+
+    return callback({
+      status: "success",
+      message: "User registered successfully",
+    }); // ⛔ STOP TOTAL
   } catch (error: any) {
-    callback({
+    return callback({
       status: "error",
       message: error.message,
     });
