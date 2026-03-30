@@ -25,3 +25,6 @@
 ![awal](public/docs/12.png)
 ![awal](public/docs/13.png)
 ![awal](public/docs/14.png)
+
+8. Simpan Data Google ke Database 
+![awal](public/docs/15.png)
