@@ -58,3 +58,8 @@ tidak bisa mengatur role
 tidak bisa menyimpan profil
 sulit melacak user
 akses fitur tidak bisa dibatasi
+
+11. Tugas Mandiri
+![awal](public/docs/18.png)
+![awal](public/docs/19.png)
+![awal](public/docs/20.gif)

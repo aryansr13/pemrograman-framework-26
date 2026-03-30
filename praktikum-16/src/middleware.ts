@@ -12,6 +12,7 @@ export default withAuth(
   middleware,
   [
     "/profil",
-    "/admin"
+    "/admin",
+    "/editor" 
   ]
 );

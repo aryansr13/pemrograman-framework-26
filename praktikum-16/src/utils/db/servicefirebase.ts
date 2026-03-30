@@ -172,118 +172,58 @@ export async function signUp(
 
 
 // login google
-export async function signInWithGoogle(
-
+// Ubah nama fungsi dari signInWithGoogle menjadi signInWithOAuth
+export async function signInWithOAuth(
   userData: any,
-
   callback: any
-
 ) {
-
   try {
-
     const q = query(
-
       collection(db, "users"),
-
       where("email", "==", userData.email)
-
     );
 
-
     const querySnapshot = await getDocs(q);
-
-
     const data: any = querySnapshot.docs.map((doc) => ({
-
       id: doc.id,
-
       ...doc.data(),
-
     }));
 
-
-
-    // jika user sudah ada
+    // Jika user sudah terdaftar di Firestore
     if (data.length > 0) {
-
+      // Pertahankan role yang sudah ada di database
       userData.role = data[0].role;
 
-
-      await updateDoc(
-
-        doc(db, "users", data[0].id),
-
-        {
-
-          fullname: userData.fullname,
-
-          email: userData.email,
-
-          image: userData.image,
-
-          role: userData.role,
-
-        }
-
-      );
-
-
-      callback({
-
-        status: true,
-
-        message: "Login Google success",
-
-        data: userData,
-
+      await updateDoc(doc(db, "users", data[0].id), {
+        fullname: userData.fullname,
+        email: userData.email,
+        image: userData.image, // Update foto profil jika ada perubahan dari provider
+        type: userData.type,   // Catat login menggunakan apa (Google/Github)
       });
 
-    }
-
-
-    // jika user baru
+      callback({
+        status: true,
+        message: `Login ${userData.type} success`,
+        data: userData,
+      });
+    } 
+    // Jika user baru pertama kali login
     else {
+      userData.role = "member"; // Default role untuk user baru
 
-      userData.role = "member";
-
-
-      await addDoc(
-
-        collection(db, "users"),
-
-        userData
-
-      );
-
+      await addDoc(collection(db, "users"), userData);
 
       callback({
-
         status: true,
-
-        message: "Register Google success",
-
+        message: `Register ${userData.type} success`,
         data: userData,
-
       });
-
     }
-
-  }
-
-
-  catch (error: any) {
-
+  } catch (error: any) {
     callback({
-
       status: false,
-
-      message: "Failed login Google",
-
+      message: "Failed OAuth login",
       error: error.message,
-
     });
-
   }
-
 }
