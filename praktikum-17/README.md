@@ -4,3 +4,6 @@
 
 2. Font Optimization 
 ![awal](public/docs/3.png)
+
+3. Script Optimization 
+![awal](public/docs/4.png)
