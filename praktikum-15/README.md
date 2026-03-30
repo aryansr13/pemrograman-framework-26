@@ -18,3 +18,20 @@
 
 7. Pengujian 
 ![awal](public/docs/7.gif)
+
+8. Pertanyaan Analisis
+
+1. Mengapa password harus diverifikasi dengan bcrypt.compare? 
+:Karena password di database disimpan dalam bentuk hash, bukan plaintext. bcrypt.compare digunakan untuk mencocokkan password input dengan hash secara aman.
+
+2. Mengapa role disimpan di token? 
+:Supaya akses user bisa dicek cepat (misalnya admin/user) tanpa query ulang ke database setiap request.
+
+3. Apa fungsi callbackUrl? 
+:Untuk menentukan redirect setelah login berhasil (misalnya balik ke halaman sebelumnya atau ke dashboard).
+
+4. Mengapa middleware penting untuk security?
+:Karena middleware bisa menyaring akses sebelum masuk ke halaman, jadi user yang belum login langsung ditolak.
+
+5. Apa risiko jika role tidak dicek di middleware? 
+:User bisa akses halaman yang tidak seharusnya (contoh: user biasa masuk ke halaman admin).
