@@ -15,3 +15,6 @@
 
 6.  Membuat halaman Admin dan authoriz 
 ![awal](public/docs/6.png)
+
+7. Pengujian 
+![awal](public/docs/7.gif)
