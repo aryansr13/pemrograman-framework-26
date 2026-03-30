@@ -4,3 +4,6 @@
 2. Handle Login di Frontend  
 ![awal](public/docs/2.png)
 
+3. Authorize di NextAuth (Database Login) 
+![awal](public/docs/3.png)
+
