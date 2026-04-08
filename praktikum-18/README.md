@@ -22,3 +22,6 @@
 7. Testing Page dengan Router (Mocking)
 ![awal](public/docs/10.png)
 ![awal](public/docs/11.png)
+
+8. Menangani Undefined Data 
+![awal](public/docs/12.png)
