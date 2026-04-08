@@ -37,4 +37,19 @@
 
 ![awal](public/docs/17.png)
 
+10. Diskusi & Refleksi 
+1. Mengapa unit testing penting sebelum production? 
+:Unit testing penting agar bug terdeteksi lebih awal sebelum ke production.
+
+2. Mengapa branch coverage sulit mencapai 100%? 
+:Branch coverage sulit 100% karena banyak kondisi edge case yang jarang terjadi.
+
+3. Apa itu mocking? 
+:Mocking adalah teknik meniru dependency (API, DB, dll) agar test bisa berjalan tanpa resource asli.
+
+4. Kapan snapshot test digunakan? 
+:Snapshot test digunakan untuk mengecek perubahan tampilan UI agar tidak berubah tanpa sengaja.
+
+5. Apakah semua file harus dites? 
+:Tidak semua file harus dites, fokus pada logic penting dan fitur utama.
 
