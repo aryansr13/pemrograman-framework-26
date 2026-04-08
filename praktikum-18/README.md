@@ -25,3 +25,16 @@
 
 8. Menangani Undefined Data 
 ![awal](public/docs/12.png)
+
+9. Tugas Praktikum
+![awal](public/docs/13.png)
+
+![awal](public/docs/14.png)
+
+![awal](public/docs/15.png)
+
+![awal](public/docs/16.png)
+
+![awal](public/docs/17.png)
+
+

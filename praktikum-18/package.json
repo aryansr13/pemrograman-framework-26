@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test": "jest --passWithNoTests -u",
     "test:coverage": "npm run test -- --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:praktikum": "jest src/__test__/pages/ --collectCoverageFrom=\"src/pages/auth/login.tsx\" --collectCoverageFrom=\"src/views/register/index.tsx\" --collectCoverageFrom=\"src/pages/produk/index.tsx\" --collectCoverageFrom=\"src/pages/about.tsx\" --collectCoverageFrom=\"src/components/Footer/index.tsx\" --coverage"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
