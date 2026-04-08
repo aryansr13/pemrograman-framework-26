@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Login Page renders login page correctly 1`] = `
+<div>
+  <div
+    class="login"
+  >
+    <h1
+      class="login__title"
+    >
+      Halaman Login
+    </h1>
+    <form
+      class="login__form"
+    >
+      <div
+        class="login__form__item"
+      >
+        <label
+          class="login__form__item__label"
+        >
+          Email
+        </label>
+        <input
+          class="login__form__item__input"
+          placeholder="email@example.com"
+          required=""
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="login__form__item"
+      >
+        <label
+          class="login__form__item__label"
+        >
+          Password
+        </label>
+        <input
+          class="login__form__item__input"
+          placeholder="****"
+          required=""
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        class="login__button"
+        type="submit"
+      >
+        Login
+      </button>
+      <hr
+        style="margin: 20px 0px; opacity: 0.2;"
+      />
+      <div
+        style="display: flex; flex-direction: column; gap: 10px;"
+      >
+        <button
+          style="background-color: rgb(219, 68, 55); color: white; padding: 10px; border-radius: 8px; cursor: pointer;"
+          type="button"
+        >
+          Sign in with Google
+        </button>
+        <button
+          style="background-color: rgb(51, 51, 51); color: white; padding: 10px; border-radius: 8px; cursor: pointer;"
+          type="button"
+        >
+          Sign in with GitHub
+        </button>
+      </div>
+      <p
+        style="margin-top: 15px; text-align: center;"
+      >
+        Belum punya akun?
+         
+        <a
+          href="/auth/register"
+          style="color: rgb(42, 82, 152); font-weight: 600;"
+        >
+          Daftar di sini
+        </a>
+      </p>
+    </form>
+  </div>
+</div>
+`;
