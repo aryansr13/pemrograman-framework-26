@@ -1,0 +1,135 @@
+@keyframes loading {
+  0% { background-color: #e2e8f0; }
+  50% { background-color: #cbd5e1; }
+  100% { background-color: #e2e8f0; }
+}
+
+.product {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto; /* Memastikan konten selalu di tengah */
+  min-height: 80vh;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #0f172a; /* Menyesuaikan dengan warna navbar */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__content {
+    display: grid;
+    /* Ini rahasia grid responsif tanpa media query! */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+
+    /* ===================== */
+    /* ITEM PRODUK */
+    /* ===================== */
+    &__item {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-color: #e2e8f0;
+      }
+
+      &__image {
+        width: 100%;
+        height: 220px; /* Sedikit lebih tinggi */
+        overflow: hidden;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        background-color: #f8fafc; /* Fallback color */
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; /* Mengubah cover ke contain agar gambar tidak terpotong */
+          transition: transform 0.5s ease;
+        }
+      }
+
+      /* Efek zoom gambar saat kartu di-hover */
+      &:hover &__image img {
+        transform: scale(1.05);
+      }
+
+      &__name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 4px;
+        line-height: 1.4;
+      }
+
+      &__category {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin-bottom: 12px;
+        text-transform: capitalize;
+      }
+
+      &__price {
+        font-size: 1.125rem;
+        font-weight: 800;
+        color: #3b82f6; /* Warna biru senada dengan tombol login */
+        margin-top: auto; /* Mendorong harga selalu ke bawah */
+      }
+    }
+
+    /* ===================== */
+    /* SKELETON LOADING */
+    /* ===================== */
+    &__skeleton {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+
+      &__image, &__name, &__category, &__price {
+        background: #e2e8f0;
+        border-radius: 6px;
+        animation: loading 1.5s infinite ease-in-out; /* Animasi diaktifkan */
+      }
+
+      &__image {
+        width: 100%;
+        height: 220px;
+        margin-bottom: 16px;
+      }
+
+      &__name {
+        width: 80%;
+        height: 24px;
+        margin-bottom: 8px;
+      }
+
+      &__category {
+        width: 50%;
+        height: 16px;
+        margin-bottom: 12px;
+      }
+
+      &__price {
+        width: 60%;
+        height: 24px;
+        margin-top: auto;
+      }
+    }
+  }
+}
