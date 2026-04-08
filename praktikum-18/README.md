@@ -18,3 +18,7 @@
 6. Testing dengan getByTestId 
 ![awal](public/docs/8.png)
 ![awal](public/docs/9.png)
+
+7. Testing Page dengan Router (Mocking)
+![awal](public/docs/10.png)
+![awal](public/docs/11.png)
