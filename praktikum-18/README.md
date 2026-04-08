@@ -13,4 +13,8 @@
 ![awal](public/docs/6.png)
 
 5. Konfigurasi Coverage Lengkap
-![awal](public/docs/6.png)
+![awal](public/docs/7.png)
+
+6. Testing dengan getByTestId 
+![awal](public/docs/8.png)
+![awal](public/docs/9.png)

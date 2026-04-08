@@ -1,27 +1,71 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`AboutPage renders about page correctly 1`] = `
+exports[`About Page renders about page correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        style="padding: 20px;"
+      >
         <h1>
-          Halaman About
+          Ini halaman about
+        </h1>
+        <h1
+          data-testid="title"
+        >
+          About Page
         </h1>
         <p>
-          Ini halaman about
+          <strong>
+            Nama Mahasiswa:
+          </strong>
+           Aryan Saputra Rahmad
+        </p>
+        <p>
+          <strong>
+            NIM:
+          </strong>
+           2341720022
+        </p>
+        <p>
+          <strong>
+            Program Studi:
+          </strong>
+           Teknik Informatika
         </p>
       </div>
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      style="padding: 20px;"
+    >
       <h1>
-        Halaman About
+        Ini halaman about
+      </h1>
+      <h1
+        data-testid="title"
+      >
+        About Page
       </h1>
       <p>
-        Ini halaman about
+        <strong>
+          Nama Mahasiswa:
+        </strong>
+         Aryan Saputra Rahmad
+      </p>
+      <p>
+        <strong>
+          NIM:
+        </strong>
+         2341720022
+      </p>
+      <p>
+        <strong>
+          Program Studi:
+        </strong>
+         Teknik Informatika
       </p>
     </div>
   </div>,
