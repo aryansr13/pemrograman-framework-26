@@ -1,26 +1,38 @@
-import { useRouter } from "next/router";
-import useSWR from "swr";
-import fetcher from "@/utils/swr/fetcher"; // Sesuaikan path ini dengan lokasimu
-import DetailProduk from "@/views/DetailProduct"; // Sesuaikan path ini dengan lokasimu
+import DetailProduk from "@/views/DetailProduct"; 
 
-const ProductDetailPage = () => {
-  const { query, isReady } = useRouter();
-  
-  // Kita fetch data dari API berdasarkan ID yang ada di URL
-  // Gunakan isReady agar SWR tidak fetch data saat query.id masih undefined
-  const { data, error, isLoading } = useSWR(
-    isReady ? `/api/products/${query.id}` : null,
-    fetcher
-  );
-
+const ProdukDetailPage = ({ product }: { product: any }) => {
   return (
     <div>
-      <DetailProduk 
-        product={isLoading || !isReady ? null : data?.data} 
-        isLoading={isLoading || !isReady} 
-      />
+      <DetailProduk product={product} isLoading={false} />
     </div>
   );
 };
 
-export default ProductDetailPage;
+export default ProdukDetailPage;
+
+export async function getServerSideProps({ params }: { params: { id: string } }) {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+
+  try {
+    const res = await fetch(`${baseUrl}/api/produk/${params.id}`);
+    
+    if (!res.ok) {
+      throw new Error("Gagal mengambil data dari API");
+    }
+
+    const response = await res.json();
+
+    return {
+      props: {
+        product: response.data || null,
+      },
+    };
+  } catch (error) {
+    console.error("Error di getServerSideProps:", error);
+    return {
+      props: {
+        product: null,
+      },
+    };
+  }
+}

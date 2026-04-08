@@ -7,3 +7,8 @@
 ![awal](public/docs/4.png)
 ![awal](public/docs/5.png)
 
+
+3. Hapus file static
+![awal](public/docs/6.png)
+
+
