@@ -7,3 +7,7 @@
 
 3. Testing Halaman About 
 ![awal](public/docs/4.png)
+
+4.  Coverage Report 
+![awal](public/docs/5.png)
+![awal](public/docs/6.png)
