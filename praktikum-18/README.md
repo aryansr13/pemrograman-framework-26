@@ -11,3 +11,6 @@
 4.  Coverage Report 
 ![awal](public/docs/5.png)
 ![awal](public/docs/6.png)
+
+5. Konfigurasi Coverage Lengkap
+![awal](public/docs/6.png)
