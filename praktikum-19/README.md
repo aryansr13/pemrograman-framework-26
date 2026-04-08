@@ -10,5 +10,7 @@
 
 3. Hapus file static
 ![awal](public/docs/6.png)
+4. Deploy
+![awal](public/docs/7.png)
 
 
